@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto&display=swap" rel="stylesheet">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="style/style.css">
+
+    <title>Groupie Tracker</title>
+
+</head>
+
+<body>
+
+    <!-- Visible content -->
+    <div class="container">
+
+        <!-- Logo -->
+        <div class="logo d-flex justify-content-center mt-3 mb-4">
+            <h1 style="font-size:100px;margin-top: 50px;"><strong>Groupie Tracker</strong><h1>
+        </div>
+    </div>
+
+
+
+
+    </section>
+
+ 
+    <div id="cards" class="row">
+        {{range .}}
+        <div class="flip-card">
+        
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="col">
+                        <div class="card text-black bg-light h-50" style="width: 170px; margin: 20px 5px 5px 5px;"
+                            id="card">
+                            <img id="img" src={{.Image}} class="card-img-top" alt={{.Name}}>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                    <h1>
+                        <a href="/concerts?id={{.ID}}" name="concert"> {{.Name}}</a>
+                    </h1>
+                    <p><b>Creation Date:</b> {{.CreationDate}}</p>
+                    <p><b>First Album Received:</b> {{.FirstAlbum}}</p>
+                    <a href="/tours?id={{.ID}}" name="tour">Tour Dates</a>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+        {{end}}
+    </div>
+</body>
+
+</html>
